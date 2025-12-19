@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build with gcc",
+            "type": "shell",
+            "command": "/usr/bin/gcc", // Or just "g++" if it's in your PATH
+            "args": [
+                "-g",
+                "${workspaceFolder}/*.cpp", // Compiles all cpp files in workspace root
+                "-o",
+                "${workspaceFolder}/game.out",
+                "-I/usr/include/SDL2", // Example include path
+                "-L/usr/lib",          // Example lib path
+                "-lSDL2",                    // Link SDL2 library
+                // Add other libraries as needed, e.g., "-lSDL2_image"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}
